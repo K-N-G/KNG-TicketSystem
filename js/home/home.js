@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("KNGTicketSystem.home",['ngRoute'])
+angular.module("KNGSoftware.home",['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/home',{
             templateUrl: 'js/home/home.html',
@@ -9,6 +9,6 @@ angular.module("KNGTicketSystem.home",['ngRoute'])
     }])
     .controller('homeController',['$scope',function($scope){
         $scope.home = {
-            "name": "home",
+            "name": "home"
         };
     }]);

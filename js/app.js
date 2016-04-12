@@ -1,11 +1,15 @@
 'use strict';
 
-angular.module('KNGTicketSystem', [
+angular.module('KNGSoftware', [
     'ngRoute',
-    'KNGTicketSystem.home',
-    'KNGTicketSystem.contact'
+    'KNGSoftware.home',
+    'KNGSoftware.aboutUs',
+    'KNGSoftware.services',
+    'KNGSoftware.projects',
+    //'KNGSoftware.ticketSystem',
+    'KNGSoftware.contact'
 ])
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({redirectTo: '/home'});
+        $routeProvider.otherwise({redirectTo: '/'});
     }]);
 
