@@ -1,1 +1,5 @@
 <p>{{projects.name}}</p>
+<article ng-repeat="project in projects">
+    <header><h3>{{project.h3}}</h3></header>
+    <a href={{project.href}}><img src={{project.src}} alt={{project.alt}}/></a>
+</article>
