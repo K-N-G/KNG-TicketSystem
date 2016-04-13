@@ -3,7 +3,7 @@
 angular.module("KNGSoftware.services",['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/services',{
-            templateUrl: 'js/services/services.html',
+            templateUrl: 'js/saitServices/services.html',
             controller: 'servicesController'
         });
     }])
