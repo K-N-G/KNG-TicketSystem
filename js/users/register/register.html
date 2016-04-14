@@ -1,0 +1,21 @@
+<div class="login">
+    <h1>Register form</h1>
+    <form name="registerUserForm">
+        <label for="email">Email</label>
+        <input type="email" id="email" ng-model="registerUser.email" class="form-control" required>
+
+        <label for="registerPassword">Password</label>
+        <input type="password" min-length="6" max-length="100" id="registerPassword"
+               ng-model="registerUser.password" class="form-control" required>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" min-length="6" max-length="100" id="confirmPassword"
+               ng-model="registerUser.confirmPassword" class="form-control" required>
+
+        <button class="btn btn-primary" ng-click="register(registerUser)"
+                ng-disabled="registerUserForm.$invalid || registerUser.password != registerUser.confirmPassword">
+            Register
+        </button>
+        <a href="#/login" class="btn btn-primary">Cancel</a>
+    </form>
+</div>

@@ -46,4 +46,19 @@ nav {
           color: black;
           border-radius: 5px; }
 
+#login {
+  float: right; }
+
+.login {
+  width: 40%;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+  margin: 40px auto;
+  min-height: 200px; }
+  .login label {
+    width: 90%; }
+  .login input {
+    width: 90%; }
+
 /*# sourceMappingURL=style.css.map */
