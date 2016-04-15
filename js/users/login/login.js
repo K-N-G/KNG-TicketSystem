@@ -10,11 +10,18 @@ angular.module("KNGSoftware.login",['KNGSoftware.authentication'])
     .controller('loginController',[
         '$scope',
         'authentication',
-        function($scope,authentication){
+        '$location',
+        'notifyService',
+        function($scope,authentication,$location,notifyService){
         $scope.login = function(user){
             authentication.loginUser(user)
-                .then(function(loginUser){
-                    console.log(loginUser);
+                .then(function(responce){
+                    sessionStorage['authToken'] = responce.access_token;
+                    //notifyService.showInfo('Login successfull');
+                    $location.path('/dashboard');
+                },
+                function (error) {
+                    //notifyService.showError('Login failed', error);
                 });
         };
     }]);

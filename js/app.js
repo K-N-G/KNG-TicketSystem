@@ -8,6 +8,8 @@ angular.module('KNGSoftware', [
     'KNGSoftware.projects',
     'KNGSoftware.login',
     'KNGSoftware.register',
+    'KNGSoftware.dashboard',
+    'KNGSoftware.notifyService',
     //'KNGSoftware.ticketSystem',
     'KNGSoftware.contact'
 ])
