@@ -68,10 +68,15 @@ angular.module("KNGSoftware.authentication",[])
             return deferred.promise;
         }
 
+        function hasLoggedUser() {
+            return sessionStorage.authToken !== undefined;
+        }
+
         return{
             registerUser: registerUser,
             loginUser: loginUser,
-            logout: logout
+            logout: logout,
+            hasLoggedUser: hasLoggedUser
         }
 
     }]);

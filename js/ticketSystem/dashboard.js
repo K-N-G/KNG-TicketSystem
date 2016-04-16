@@ -7,8 +7,9 @@ angular.module("KNGSoftware.dashboard",[])
             controller: 'dashboardController'
         });
     }])
-    .controller('dashboardController',['$scope',function($scope){
+    .controller('dashboardController',['$scope','authentication',function($scope,authentication){
         $scope.dashboard = {
             "name": "dashboard"
         };
+        $scope.isLogged = authentication.hasLoggedUser;
     }]);

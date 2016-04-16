@@ -17,11 +17,12 @@ angular.module("KNGSoftware.login",['KNGSoftware.authentication'])
             authentication.loginUser(user)
                 .then(function(responce){
                     sessionStorage['authToken'] = responce.access_token;
-                    //notifyService.showInfo('Login successfull');
+                    notifyService.showInfo('Login successfull');
                     $location.path('/dashboard');
                 },
                 function (error) {
-                    //notifyService.showError('Login failed', error);
+                    notifyService.showError('Login failed', error);
                 });
+            authentication.hasLoggedUser();
         };
     }]);

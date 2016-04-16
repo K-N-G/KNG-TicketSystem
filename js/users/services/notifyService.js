@@ -1,6 +1,9 @@
+'use strict';
+
 angular.module('KNGSoftware.notifyService', [])
     .factory('notifyService', [function(){
         function showInfo(msg){
+
             noty({
                 text: msg,
                 type: 'success',
