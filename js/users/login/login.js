@@ -23,6 +23,9 @@ angular.module("KNGSoftware.login",['KNGSoftware.authentication'])
                 function (error) {
                     notifyService.showError('Login failed', error);
                 });
-            authentication.hasLoggedUser();
+
+
         };
+            $scope.isLogged = authentication.hasLoggedUser();
+            console.log($scope.isLogged);
     }]);

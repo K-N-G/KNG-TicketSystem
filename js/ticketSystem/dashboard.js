@@ -11,5 +11,8 @@ angular.module("KNGSoftware.dashboard",[])
         $scope.dashboard = {
             "name": "dashboard"
         };
-        $scope.isLogged = authentication.hasLoggedUser;
+        $scope.isLogged = authentication.hasLoggedUser();
+        console.log(authentication.hasLoggedUser());
+        console.log($scope.isLogged);
+
     }]);
