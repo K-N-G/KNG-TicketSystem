@@ -27,5 +27,4 @@ angular.module("KNGSoftware.login",['KNGSoftware.authentication'])
 
         };
             $scope.isLogged = authentication.hasLoggedUser();
-            console.log($scope.isLogged);
     }]);

@@ -1,0 +1,9 @@
+<ul ng-controller="loginController" ng-if="!isLogged">
+    <li><a href="#/login">Login</a></li>
+    <li><a href="#/register">Register</a></li>
+</ul>
+
+<ul ng-controller="logoutController" ng-if="isLogged">
+    <li><a href="#/dashboard">Dashboard</a></li>
+    <li><a ng-click="logout()">Logout</a></li>
+</ul>

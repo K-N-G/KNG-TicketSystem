@@ -52,7 +52,8 @@ nav{
   background-color: black;
   ul{
     text-align: center;
-    margin: 5px;
+    margin: 5px 5px 0 5px;
+
     li{
       display: inline-block;
       padding: 12px 30px;
@@ -71,8 +72,30 @@ nav{
     }
   }
 }
-#login{
-  float: right;
+#user-menu{
+  ul{
+    background: black;
+    text-align: right;
+    margin: 0px;
+    li{
+      display: inline-block;
+      padding: 12px 30px;
+      text-align: left;
+      a{
+        background-color: black;
+        text-decoration: none;
+        color: white;
+        padding: 7px;
+        cursor: pointer;
+        &:hover{
+          background-color: grey;
+          color: black;
+          border-radius: 5px;
+        }
+      }
+
+    }
+  }
 }
 .login{
   width: 40%;
@@ -88,3 +111,4 @@ nav{
     width: 90%;
   }
 }
+

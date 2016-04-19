@@ -1,4 +1,4 @@
-<p>{{projects.name}}</p>
+<div ng-include="'js/users/user-menu/user-menu.html'" id="user-menu"></div>
 <article ng-repeat="project in projects">
     <header><h3>{{project.h3}}</h3></header>
     <a href={{project.href}}><img src={{project.src}} alt={{project.alt}}/></a>

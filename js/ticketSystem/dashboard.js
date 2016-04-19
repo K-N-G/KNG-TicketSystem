@@ -13,6 +13,5 @@ angular.module("KNGSoftware.dashboard",[])
         };
         $scope.isLogged = authentication.hasLoggedUser();
         console.log(authentication.hasLoggedUser());
-        console.log($scope.isLogged);
 
     }]);
