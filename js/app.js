@@ -9,6 +9,7 @@ angular.module('KNGSoftware', [
     'KNGSoftware.login',
     'KNGSoftware.register',
     'KNGSoftware.logout',
+    'KNGSoftware.changePassword',
     'KNGSoftware.dashboard',
     'KNGSoftware.notifyService',
     //'KNGSoftware.ticketSystem',
