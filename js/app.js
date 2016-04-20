@@ -6,17 +6,22 @@ angular.module('KNGSoftware', [
     'KNGSoftware.aboutUs',
     'KNGSoftware.services',
     'KNGSoftware.projects',
+    'KNGSoftware.authentication',
+    'KNGSoftware.identity',
     'KNGSoftware.login',
     'KNGSoftware.register',
     'KNGSoftware.logout',
     'KNGSoftware.changePassword',
     'KNGSoftware.dashboard',
     'KNGSoftware.notifyService',
-    //'KNGSoftware.ticketSystem',
-    'KNGSoftware.contact'
+    'KNGSoftware.contact',
+    'KNGSoftware.adminService',
+    'KNGSoftware.admin'
+
+
 ])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({redirectTo: '/home'});
     }])
-    .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/api/');
+    .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/');
 

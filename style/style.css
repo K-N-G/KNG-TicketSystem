@@ -47,22 +47,23 @@ nav {
           border-radius: 5px; }
 
 #user-menu ul {
-  background: black;
+  background: grey;
   text-align: right;
   margin: 0px; }
   #user-menu ul li {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 8px 10px;
     text-align: left; }
     #user-menu ul li a {
-      background-color: black;
+      background-color: grey;
       text-decoration: none;
       color: white;
       padding: 7px;
-      cursor: pointer; }
+      cursor: pointer;
+      font-size: 12px; }
       #user-menu ul li a:hover {
-        background-color: grey;
-        color: black;
+        background-color: black;
+        color: grey;
         border-radius: 5px; }
 
 .login {

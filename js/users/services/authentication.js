@@ -11,7 +11,7 @@ angular.module("KNGSoftware.authentication",[])
             var deferred = $q.defer();
             var request = {
                 method: 'POST',
-                url: BASE_URL + 'Account/Register',
+                url: BASE_URL + 'api/Account/Register',
                 data: {
                     'Email': user.email,
                     'Password': user.password,
@@ -35,7 +35,7 @@ angular.module("KNGSoftware.authentication",[])
             var loginData = "grant_type=password&username=" + user.username + "&password=" + user.password;
             var request = {
                 method: 'POST',
-                url: BASE_URL + 'Token',
+                url: BASE_URL + 'api/Token',
                 data: loginData,
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             };
@@ -54,7 +54,7 @@ angular.module("KNGSoftware.authentication",[])
             var deferred = $q.defer();
             var request = {
                 method: 'POST',
-                url: BASE_URL + 'Account/Logout',
+                url: BASE_URL + 'api/Account/Logout',
                 headers:{'Authorization': 'Bearer ' + sessionStorage.authToken}
             };
             $http(request)
@@ -72,39 +72,12 @@ angular.module("KNGSoftware.authentication",[])
             return sessionStorage.authToken !== undefined;
         }
 
-        function getCurrentUser(){
-            var deferred = $q.defer();
-            var request = {
-                method: 'GET',
-                url: BASE_URL + 'users/me',
-                headers: {'Authorization': 'Bearer ' + sessionStorage.authToken}
-            };
-            $http(request)
-                .then(function (data) {
-                    deferred.resolve(data.data);
-                }, function (err) {
-                    deferred.reject(err)
-                });
-            return deferred.promise;
-        }
-
-        var isAdministrator = function(){
-            var currentUser = undefined;
-            getCurrentUser()
-                .then(
-                function(data){
-                    currentUser = data.isAdmin;
-                }
-            );
-            return currentUser;
-        };
-
         function changePassword(data) {
             var deferred = $q.defer();
             var requestData = 'OldPassword=' + data.oldPassword + '&NewPassword=' + data.newPassword + '&ConfirmPassword=' + data.confirmNewPassword;
             var request = {
                 method: 'POST',
-                url: BASE_URL + 'Account/ChangePassword',
+                url: BASE_URL + 'api/Account/ChangePassword',
                 data: requestData,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -116,18 +89,11 @@ angular.module("KNGSoftware.authentication",[])
                 function (data) {
                     deferred.resolve(data);
                 },
-                function (err) {
-                    deferred.reject(err);
+                function (error) {
+                    deferred.reject(error);
                 }
             );
             return deferred.promise;
-        }
-
-        function isAdmin (){
-            if (sessionStorage['currentUser']){
-                var current = JSON.parse(sessionStorage.currentUser);
-                return current.isAdmin;
-            }
         }
 
         return{
@@ -135,9 +101,8 @@ angular.module("KNGSoftware.authentication",[])
             loginUser: loginUser,
             logout: logout,
             hasLoggedUser: hasLoggedUser,
-            getCurrentUser: getCurrentUser,
-            changePassword: changePassword,
-            isAdmin: isAdmin
+            changePassword: changePassword
+
         }
 
     }]);

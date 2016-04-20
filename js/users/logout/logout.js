@@ -12,7 +12,8 @@ angular.module("KNGSoftware.logout",['KNGSoftware.authentication'])
         'authentication',
         '$location',
         'notifyService',
-        function($scope,authentication,$location,notifyService){
+        'identity',
+        function($scope,authentication,$location,notifyService,identity){
             $scope.logout = function(){
                 authentication.logout()
                     .then(
@@ -27,8 +28,8 @@ angular.module("KNGSoftware.logout",['KNGSoftware.authentication'])
                 )
             };
 
-            $scope.isLogged = authentication.hasLoggedUser();
+            $scope.isLogged = identity.hasLoggedUser();
 
-            $scope.isAdmin = authentication.isAdmin();
+            $scope.isAdmin = identity.isAdmin();
         }
     ]);

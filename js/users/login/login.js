@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("KNGSoftware.login",['KNGSoftware.authentication'])
+angular.module("KNGSoftware.login",[])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/login',{
             templateUrl: 'js/users/login/login.html',
@@ -12,13 +12,23 @@ angular.module("KNGSoftware.login",['KNGSoftware.authentication'])
         'authentication',
         '$location',
         'notifyService',
-        function($scope,authentication,$location,notifyService){
+        'identity',
+        function($scope,authentication,$location,notifyService,identity){
         $scope.login = function(user){
             authentication.loginUser(user)
-                .then(function(responce){
+                .then(function (responce) {
                     sessionStorage['authToken'] = responce.access_token;
                     notifyService.showInfo('Login successfull');
-                    $location.path('/dashboard');
+                    identity.getCurrentUser()
+                        .then(
+                        function(data){
+                            sessionStorage['currentUser'] = JSON.stringify(data);
+                            $location.path('/dashboard')
+                        },
+                        function(error){
+                            console.log(error);
+                        }
+                    )
                 },
                 function (error) {
                     notifyService.showError('Login failed', error);
@@ -26,5 +36,8 @@ angular.module("KNGSoftware.login",['KNGSoftware.authentication'])
 
 
         };
-            $scope.isLogged = authentication.hasLoggedUser();
+            $scope.isLogged = identity.hasLoggedUser();
+            $scope.isAdmin = identity.isAdmin();
+            console.log($scope.isLogged);
+            console.log($scope.isAdmin);
     }]);

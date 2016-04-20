@@ -1,2 +1,13 @@
-<div ng-include="'js/users/user-menu/user-menu.html'" id="user-menu"></div>
+<div ng-controller="loginController" id="user-menu">
+    <ul ng-if="!isLogged">
+        <li><a href="#/login">Login</a></li>
+        <li><a href="#/register">Register</a></li>
+    </ul>
+    <ul ng-if="isLogged">
+        <li><a href="#/dashboard">Dashboard</a></li>
+        <li><a href="#/projects">Projects</a></li>
+        <li><a href="#/profile/password">Password Change</a></li>
+        <li><a ng-controller="logoutController" ng-click="logout()">Logout</a></li>
+    </ul>
+</div>
 <p>{{dashboard.name}}</p>
