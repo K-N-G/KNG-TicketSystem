@@ -37,15 +37,13 @@ angular.module('KNGSoftware.adminService', [])
                         Authorization: 'Bearer ' + sessionStorage.authToken
                     }
                 };
-                console.log("vliza");
                 $http(request)
                     .then(
                     function success(data) {
                         deferred.resolve(data);
-                        console.log(data);
                     },
-                    function error(error) {
-                        deferred.reject(error);
+                    function error(err) {
+                        deferred.reject(err);
                     }
                 );
                 return deferred.promise;

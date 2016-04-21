@@ -27,12 +27,11 @@ angular.module('KNGSoftware.admin', [])
                     .then(
                     function success(data){
                         $scope.users = data.data;
-                        console.log(data);
                     },
-                    function error(error){
-                        console.log(error);
+                    function error(err){
+                        console.log(err);
                     }
                 );
             };
-
+            $scope.users = $scope.allUsers();
         }]);

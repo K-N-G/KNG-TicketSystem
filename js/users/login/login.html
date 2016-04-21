@@ -3,12 +3,10 @@
     <h1>Login form</h1>
     <form name="loginUserForm">
         <label for="username">Username</label>
-        <input type="text" id="username" ng-model="loginUser.username" class="form-control" required>
+        <input type="text" id="username" ng-model="loginUser.username" required>
         <label for="password">Password</label>
-        <input type="password" id="password" ng-model="loginUser.password" class="form-control" required>
-        <button class="btn btn-primary" ng-disabled="loginUserForm.$invalid" ng-click="login(loginUser)">Login</button>
-        <a href="#/" class="btn btn-primary">Cancel</a>
+        <input type="password" id="password" ng-model="loginUser.password" required>
+        <button ng-disabled="loginUserForm.$invalid" ng-click="login(loginUser)">Login</button>
+        <button onclick="location.href='#/home'" >Cancel</button>
     </form>
-
-    <a href="#/register">Register</a>
 </div>

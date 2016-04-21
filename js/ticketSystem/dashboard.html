@@ -7,7 +7,42 @@
         <li><a href="#/dashboard">Dashboard</a></li>
         <li><a href="#/projects">Projects</a></li>
         <li><a href="#/profile/password">Password Change</a></li>
+        <li ng-if="isAdmin"><a href="#/admin">Users</a></li>
         <li><a ng-controller="logoutController" ng-click="logout()">Logout</a></li>
+
     </ul>
 </div>
-<p>{{dashboard.name}}</p>
+
+<div ng-if="isLogged">
+    <div>
+        <a href="#/projects/add"><button type="button" ng-if="isAdmin()">Add new project</button></a>
+        <a href="#/projects"><button type="button" ng-if="isAdmin()">All projects</button></a>
+        <h2>Dashboard</h2>
+        <h3>My lead projects</h3>
+        <table class="table">
+            <tr ng-repeat="project in projectsWhereLead">
+                <td><a href="#projects/{{project.Id}}">{{project.Name}}</a></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Project</th>
+                <th>Due Date</th>
+            </tr>1
+            </thead>
+            <tbody>
+            <tr ng-repeat="issue in userIssues">
+                <td><a href="#issues/{{issue.Id}}">{{issue.Title}}</a></td>
+                <td>{{issue.Description}}</td>
+                <td><a href="#projects/{{issue.Project.Id}}">{{issue.Project.Name}}</a></td>
+                <td>{{issue.DueDate}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

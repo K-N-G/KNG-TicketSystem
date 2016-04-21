@@ -13,10 +13,15 @@ angular.module('KNGSoftware', [
     'KNGSoftware.logout',
     'KNGSoftware.changePassword',
     'KNGSoftware.dashboard',
+    'KNGSoftware.dashboardService',
     'KNGSoftware.notifyService',
     'KNGSoftware.contact',
     'KNGSoftware.adminService',
-    'KNGSoftware.admin'
+    'KNGSoftware.admin',
+    'KNGSoftware.projectService',
+    'KNGSoftware.project',
+    'KNGSoftware.editProjectService',
+    'KNGSoftware.projectEdit'
 
 
 ])
