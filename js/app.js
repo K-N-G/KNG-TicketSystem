@@ -21,7 +21,9 @@ angular.module('KNGSoftware', [
     'KNGSoftware.projectService',
     'KNGSoftware.project',
     'KNGSoftware.editProjectService',
-    'KNGSoftware.projectEdit'
+    'KNGSoftware.projectEdit',
+    'KNGSoftware.addProject',
+    'KNGSoftware.addProjectService'
 
 
 ])

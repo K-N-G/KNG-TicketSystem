@@ -1,8 +1,8 @@
-<div class="jumbotron container">
-    <div class="col-md-5">
+<div class="user-box">
+    <div>
         <h2>{{project.ProjectKey}}</h2>
-        <a ng-if="isAdmin()||isProjectLeader" class="btn btn-info" href="#projects/edit/{{project.Id}}">Edit</a>
-        <a ng-if="isAdmin()||isProjectLeader" class="btn btn-info" href="#projects/add-issue/{{project.Id}}">Add Issue</a>
+        <a ng-if="isAdmin ||isProjectLeader" href="#projects/edit/{{project.Id}}">Edit</a>
+        <a ng-if="isAdmin ||isProjectLeader" href="#projects/add-issue/{{project.Id}}">Add Issue</a>
         <p>Project key: {{project.ProjectKey}}</p>
         <p><strong>Name:</strong> {{project.Name}}</p>
         <p><strong>Description:</strong> {{project.Description}}</p>
@@ -10,8 +10,8 @@
         <p>Labels: <span ng-repeat="label in project.Labels">{{label.Name}}{{$last ? '' : ', '}}</span></p>
         <p>Priorities: <span ng-repeat="priority in project.Priorities">{{priority.Name}}{{$last ? '' : ', '}}</span></p>
     </div>
-    <div class="col-md-7">
-        <table class="table table-hover">
+    <div>
+        <table>
             <thead>
             <tr>
                 <th>Title</th>

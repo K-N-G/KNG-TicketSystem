@@ -39,5 +39,4 @@ angular.module("KNGSoftware.login",[])
             $scope.isLogged = identity.hasLoggedUser();
 
             $scope.isAdmin = identity.isAdmin();
-            console.log($scope.isAdmin);
     }]);

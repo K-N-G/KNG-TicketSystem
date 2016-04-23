@@ -42,9 +42,35 @@ angular.module('KNGSoftware.identity', [])
                 return sessionStorage.authToken !== undefined;
             }
 
+            var projectLeader = false;
+
+            function setProjectLeader (projectId){
+                var deferred = $q.defer();
+                var request = {
+                    method: 'GET',
+                    url: BASE_URL + 'projects/' + projectId,
+                    headers: {'Authorization': 'Bearer ' + sessionStorage.authToken}
+                };
+                $http(request)
+                    .then(function (data) {
+                        projectLeader = data.data.Lead.Id===JSON.parse(sessionStorage.currentUser).Id;
+                        deferred.resolve();
+                    }, function (error) {
+                        deferred.reject(error)
+                    });
+                return deferred.promise;
+
+            }
+
+            function isProjectLeader(){
+                return projectLeader;
+            }
+
             return {
                 hasLoggedUser: hasLoggedUser,
                 getCurrentUser: getCurrentUser,
-                isAdmin: isAdmin
+                isAdmin: isAdmin,
+                setProjectLeader: setProjectLeader,
+                isProjectLeader: isProjectLeader
             }
         }]);

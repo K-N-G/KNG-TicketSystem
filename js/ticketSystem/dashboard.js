@@ -16,6 +16,7 @@ angular.module("KNGSoftware.dashboard",[])
         function ($scope, authentication, notifyService, identity, dashboardService) {
         $scope.isLogged = authentication.hasLoggedUser();
         $scope.hasLoggedUser = identity.hasLoggedUser;
+        $scope.isAdmin = identity.isAdmin;
 
         $scope.issuesParams = {
             pageSize: 10,
