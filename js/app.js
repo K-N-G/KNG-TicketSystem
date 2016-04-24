@@ -16,12 +16,12 @@ angular.module('KNGSoftware', [
     'KNGSoftware.dashboardService',
     'KNGSoftware.notifyService',
     'KNGSoftware.contact',
-    'KNGSoftware.adminService',
     'KNGSoftware.admin',
-    'KNGSoftware.projectService',
+    'KNGSoftware.adminService',
     'KNGSoftware.project',
-    'KNGSoftware.editProjectService',
+    'KNGSoftware.projectService',
     'KNGSoftware.projectEdit',
+    'KNGSoftware.editProjectService',
     'KNGSoftware.addProject',
     'KNGSoftware.addProjectService'
 

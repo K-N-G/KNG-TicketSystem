@@ -9,8 +9,9 @@ angular.module('KNGSoftware.admin', [])
         '$scope',
         'adminService',
         'notifyService',
-        function ($scope, adminService, notifyService) {
-
+        'dashboard',
+        function ($scope, adminService, notifyService,dashboard) {
+            $scope.allUsers();
 
             $scope.makeAdmin = function (userId) {
                 adminService.makeAdmin(userId)
@@ -22,16 +23,4 @@ angular.module('KNGSoftware.admin', [])
                 )
             };
 
-            $scope.allUsers = function(){
-                adminService.getAllUsers()
-                    .then(
-                    function success(data){
-                        $scope.users = data.data;
-                    },
-                    function error(err){
-                        console.log(err);
-                    }
-                );
-            };
-            $scope.users = $scope.allUsers();
         }]);

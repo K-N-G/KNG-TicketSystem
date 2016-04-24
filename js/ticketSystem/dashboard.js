@@ -54,7 +54,22 @@ angular.module("KNGSoftware.dashboard",[])
             );
         };
 
-        if ($scope.hasLoggedUser()) {
+        $scope.allUsers = function(){
+            dashboardService.getAllUsers()
+                .then(
+                function success(data){
+                    $scope.users = data.data;
+                    console.log($scope.users);
+
+                },
+                function error(err){
+                    console.log(err);
+                }
+            );
+        };
+
+
+            if ($scope.hasLoggedUser()) {
             $scope.getUserIssues();
             $scope.getAssociatedProjects();
         }

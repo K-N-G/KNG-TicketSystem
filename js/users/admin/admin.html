@@ -14,7 +14,7 @@
         <tr ng-repeat="user in users">
             <td>{{user.Username}}</td>
             <td>{{user.isAdmin}}</td>
-            <td ng-if="!user.isAdmin"><button ng-click="makeAdmin(user.Id)">Make admin</button></td>
+            <td ng-controller="dashboardController" ng-if="!user.isAdmin"><button ng-click="makeAdmin(user.Id)">Make admin</button></td>
         </tr>
         </tbody>
     </table>

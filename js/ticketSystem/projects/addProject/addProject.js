@@ -1,6 +1,6 @@
 angular.module('KNGSoftware.addProject', [])
     .config(['$routeProvider', function($routeProvider){
-        $routeProvider.when('/projects1/add', {
+        $routeProvider.when('/project/add', {
             controller: 'AddProjectController',
             templateUrl: 'js/ticketSystem/projects/addProject/addProject.html',
             access: {
@@ -11,7 +11,6 @@ angular.module('KNGSoftware.addProject', [])
     .controller('AddProjectController', [
         '$scope', '$location', 'addProjectService', 'notifyService',
         function($scope, $location, addProjectService, notifyService){
-            $scope.allUsers;
 
             $scope.addProject = function(project){
                 project.labels = getArrayOfWords(project.labels);

@@ -48,8 +48,30 @@ angular.module('KNGSoftware.dashboardService', [])
                 return deferred.promise;
             }
 
+            function getAllUsers() {
+                var deferred = $q.defer();
+                var request = {
+                    method: 'GET',
+                    url: BASE_URL + 'Users',
+                    headers: {
+                        Authorization: 'Bearer ' + sessionStorage.authToken
+                    }
+                };
+                $http(request)
+                    .then(
+                    function success(data) {
+                        deferred.resolve(data);
+                    },
+                    function error(err) {
+                        deferred.reject(err);
+                    }
+                );
+                return deferred.promise;
+            }
+
             return{
                 getUserIssues: getUserIssues,
-                getUserProjects: getUserProjectsWhereIsLead
+                getUserProjects: getUserProjectsWhereIsLead,
+                getAllUsers: getAllUsers
             }
         }]);

@@ -96,6 +96,7 @@ angular.module("KNGSoftware.authentication",[])
             return deferred.promise;
         }
 
+
         return{
             registerUser: registerUser,
             loginUser: loginUser,
