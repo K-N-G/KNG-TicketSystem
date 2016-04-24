@@ -9,7 +9,7 @@
         </div>
         <div class="form-group">
             <label for="projectLeader">Leader</label>
-            <select class="form-control" id="projectLeader" ng-model="project.leadId">
+            <select ng-controller="dashboardController" class="form-control" id="projectLeader" ng-model="project.leadId">
                 <option value="">Project leader</option>
                 <option ng-repeat="user in users|orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
             </select>

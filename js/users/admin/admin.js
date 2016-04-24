@@ -9,9 +9,7 @@ angular.module('KNGSoftware.admin', [])
         '$scope',
         'adminService',
         'notifyService',
-        'dashboard',
-        function ($scope, adminService, notifyService,dashboard) {
-            $scope.allUsers();
+        function ($scope, adminService, notifyService) {
 
             $scope.makeAdmin = function (userId) {
                 adminService.makeAdmin(userId)

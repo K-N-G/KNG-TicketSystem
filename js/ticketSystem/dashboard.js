@@ -67,6 +67,7 @@ angular.module("KNGSoftware.dashboard",[])
                 }
             );
         };
+            $scope.allUsers();
 
 
             if ($scope.hasLoggedUser()) {
