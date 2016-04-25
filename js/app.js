@@ -5,7 +5,7 @@ angular.module('KNGSoftware', [
     'KNGSoftware.home',
     'KNGSoftware.aboutUs',
     'KNGSoftware.services',
-    'KNGSoftware.projects',
+    'KNGSoftware.KNGProjects',
     'KNGSoftware.authentication',
     'KNGSoftware.identity',
     'KNGSoftware.login',
@@ -23,8 +23,12 @@ angular.module('KNGSoftware', [
     'KNGSoftware.projectEdit',
     'KNGSoftware.editProjectService',
     'KNGSoftware.addProject',
-    'KNGSoftware.addProjectService'
-
+    'KNGSoftware.addProjectService',
+    'KNGSoftware.allProject',
+    'KNGSoftware.allProjectService',
+    'KNGSoftware.issue',
+    'KNGSoftware.issueService',
+    'KNGSoftware.issueDirectives'
 
 ])
     .config(['$routeProvider', function ($routeProvider) {

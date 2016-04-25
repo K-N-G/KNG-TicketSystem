@@ -1,13 +1,13 @@
 "use strict";
 
-angular.module("KNGSoftware.projects",['ngRoute'])
+angular.module("KNGSoftware.KNGProjects",['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/projects',{
-            templateUrl: 'js/saitProjects/projects.html',
+        $routeProvider.when('/KNGProjects',{
+            templateUrl: 'js/saitProjects/KNGProjects.html',
             controller: 'projectsController'
         });
     }])
-    .controller('projectsController',['$scope',function($scope){
+    .controller('KNGProjectsController',['$scope',function($scope){
         $scope.projects = [
             {
                 "h3": "Online магазин за машини и инструменти",

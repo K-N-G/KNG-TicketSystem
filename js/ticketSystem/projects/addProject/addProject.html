@@ -1,36 +1,36 @@
-<div class="main-element">
-    <div class="page-header">
+<div class="user-box">
+    <div>
         <h2>New project</h2>
     </div>
-    <form class="col-md-6" name="addProjectForm">
-        <div class="form-group">
+    <form name="addProjectForm">
+        <div>
             <label for="projectName">Name</label>
-            <input type="text" class="form-control" id="projectName" ng-model="project.name" placeholder="name" required />
+            <input type="text" id="projectName" ng-model="project.name" placeholder="name" required />
         </div>
-        <div class="form-group">
+        <div>
             <label for="projectLeader">Leader</label>
-            <select ng-controller="dashboardController" class="form-control" id="projectLeader" ng-model="project.leadId">
+            <select ng-controller="dashboardController" id="projectLeader" ng-model="project.leadId">
                 <option value="">Project leader</option>
                 <option ng-repeat="user in users|orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
             </select>
         </div>
-        <div class="form-group">
+        <div>
             <label for="projectKey">Project key</label>
-            <input type="text" class="form-control" id="projectKey" ng-model="project.key" placeholder="key" required />
+            <input type="text" id="projectKey" ng-model="project.key" placeholder="key" required />
         </div>
-        <div class="form-group">
+        <div>
             <label for="projectPriorities">Priorities (comma separated)</label>
-            <input type="text" class="form-control" id="projectPriorities" ng-model="project.priorities" placeholder="priorities" />
+            <input type="text" id="projectPriorities" ng-model="project.priorities" placeholder="priorities" />
         </div>
-        <div class="form-group">
+        <div>
             <label for="projectLabels">Labels (comma separated)</label>
-            <input type="text" class="form-control" id="projectLabels" ng-model="project.labels" placeholder="labels" />
+            <input type="text" id="projectLabels" ng-model="project.labels" placeholder="labels" />
         </div>
-        <div class="form-group">
+        <div>
             <label for="projectDescription">Description</label>
-            <textarea class="form-control" id="projectDescription" ng-model="project.description" placeholder="description" required></textarea>
+            <textarea id="projectDescription" ng-model="project.description" placeholder="description" required></textarea>
         </div>
         <p>proba</p>
-        <button class="btn btn-primary" ng-disabled="addProjectForm.$invalid" ng-click="addProject(project)">Add project</button>
+        <button ng-disabled="addProjectForm.$invalid" ng-click="addProject(project)">Add project</button>
     </form>
 </div>
