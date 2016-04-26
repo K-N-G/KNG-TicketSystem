@@ -1,29 +1,31 @@
-<div class="page-header">
+<div>
+    <div>
     <h2>Edit project</h2>
+    </div>
+    <form name="addProjectForm">
+        <div>
+            <label for="projectName">Name</label>
+            <input type="text" id="projectName" ng-model="project.Name" value="KNG" />
+        </div>
+        <div class="form-group">
+            <label for="projectLeader">Leader</label>
+            <select ng-controller="dashboardController" id="projectLeader" ng-model="project.Lead.Id">
+                <option value="{{project.Lead.Id}}">{{project.Lead.Username}}</option>
+                <option ng-repeat="user in users" value="{{user.Id}}">{{user.Username}}</option>
+            </select>
+        </div>
+        <div>
+            <label for="projectPriorities">Priorities (comma separated)</label>
+            <input type="text" id="projectPriorities" ng-model="currentPriorities" />
+        </div>
+        <div>
+            <label for="projectLabels">Labels (comma separated)</label>
+            <input type="text" id="projectLabels" ng-model="currentLabels" />
+        </div>
+        <div>
+            <label for="projectDescription">Description</label>
+            <textarea id="projectDescription" ng-model="project.Description"  required></textarea>
+        </div>
+        <button ng-disabled="addProjectForm.$invalid" ng-click="editProject(project)">Edit</button>
+    </form>
 </div>
-<form class="col-md-6" name="addProjectForm">
-    <div class="form-group">
-        <label for="projectName">Name</label>
-        <input type="text" class="form-control" id="projectName" ng-model="project.Name" value="Ivan" />
-    </div>
-    <div class="form-group">
-        <label for="projectLeader">Leader</label>
-        <select class="form-control" id="projectLeader" ng-model="project.Lead.Id">
-            <option value="{{project.Lead.Id}}">{{project.Lead.Username}}</option>
-            <option ng-repeat="user in users" value="{{user.Id}}">{{user.Username}}</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="projectPriorities">Priorities (comma separated)</label>
-        <input type="text" class="form-control" id="projectPriorities" ng-model="currentPriorities" />
-    </div>
-    <div class="form-group">
-        <label for="projectLabels">Labels (comma separated)</label>
-        <input type="text" class="form-control" id="projectLabels" ng-model="currentLabels" />
-    </div>
-    <div class="form-group">
-        <label for="projectDescription">Description</label>
-        <textarea class="form-control" id="projectDescription" ng-model="project.Description"  required></textarea>
-    </div>
-    <button class="btn btn-primary" ng-disabled="addProjectForm.$invalid" ng-click="editProject()">Edit</button>
-</form>

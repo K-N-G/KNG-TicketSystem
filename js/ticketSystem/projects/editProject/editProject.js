@@ -12,7 +12,7 @@ angular.module('KNGSoftware.projectEdit', [])
     .controller('ProjectEditController', [
         '$scope', '$routeParams', '$location', 'projectService', 'notifyService',
         function ($scope, $routeParams, $location, projectService, notifyService) {
-            $scope.allUsers();
+
 
             $scope.editProject = function(){
                 if (typeof $scope.currentLabels==='string'){

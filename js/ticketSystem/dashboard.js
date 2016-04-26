@@ -59,8 +59,6 @@ angular.module("KNGSoftware.dashboard",[])
                 .then(
                 function success(data){
                     $scope.users = data.data;
-                    console.log($scope.users);
-
                 },
                 function error(err){
                     console.log(err);
