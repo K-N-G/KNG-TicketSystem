@@ -1,13 +1,13 @@
-<div>
+<div class="user-box">
     <div>
-    <h2>Edit project</h2>
+        <h2>Edit project</h2>
     </div>
     <form name="addProjectForm">
         <div>
             <label for="projectName">Name</label>
             <input type="text" id="projectName" ng-model="project.Name" value="KNG" />
         </div>
-        <div class="form-group">
+        <div>
             <label for="projectLeader">Leader</label>
             <select ng-controller="dashboardController" id="projectLeader" ng-model="project.Lead.Id">
                 <option value="{{project.Lead.Id}}">{{project.Lead.Username}}</option>
@@ -26,6 +26,6 @@
             <label for="projectDescription">Description</label>
             <textarea id="projectDescription" ng-model="project.Description"  required></textarea>
         </div>
-        <button ng-disabled="addProjectForm.$invalid" ng-click="editProject(project)">Edit</button>
+        <button ng-disabled="addProjectForm.$invalid" ng-click="editProject()">Edit</button>
     </form>
 </div>
