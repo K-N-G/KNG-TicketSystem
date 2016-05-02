@@ -7,16 +7,25 @@ h3{
 }
 body{
   #wrapper{
-    width: 960px;
+    width: 90%;
     margin: 15px auto;
     box-shadow: 0 0 10px grey;
     header{
       border-radius: 15px 15px 0 0;
-      text-align: center;
       #logo{
+        width: 48%;
+        display: inline-block;
         img{
+          width: 55%;
           margin: 15px;
         }
+      }
+      #slogan{
+        width: 48%;
+        margin-top: 50px;
+        display: inline-block;
+        float: right;
+        text-align: center;
       }
     }
     main{
