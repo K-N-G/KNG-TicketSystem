@@ -4,7 +4,7 @@ angular.module("KNGSoftware.KNGProjects",['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/KNGProjects',{
             templateUrl: 'js/saitProjects/KNGProjects.html',
-            controller: 'projectsController'
+            controller: 'KNGProjectsController'
         });
     }])
     .controller('KNGProjectsController',['$scope',function($scope){

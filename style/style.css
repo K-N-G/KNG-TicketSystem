@@ -3,7 +3,8 @@ h1 {
   margin: 0px; }
 
 h3 {
-  font-size: 18px; }
+  font-size: 18px;
+  text-align: center; }
 
 body #wrapper {
   width: 90%;
@@ -99,10 +100,18 @@ nav {
   .user-box header {
     text-align: center; }
   .user-box table {
-    margin: 40px auto; }
+    border: 2px solid tomato;
+    min-width: 85%;
+    margin: 20px auto; }
     .user-box table thead {
-      border: 2px solid black; }
+      border: 1px solid black; }
     .user-box table tbody tr td {
       border: 1px solid grey; }
+    .user-box table a {
+      text-decoration: none;
+      color: darkred;
+      font-size: 20px; }
+      .user-box table a:hover {
+        color: darkblue; }
 
 /*# sourceMappingURL=style.css.map */

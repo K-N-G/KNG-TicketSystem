@@ -1,22 +1,10 @@
-<div ng-controller="loginController" id="user-menu">
-    <ul ng-if="!isLogged">
-        <li><a href="#/login">Login</a></li>
-        <li><a href="#/register">Register</a></li>
-    </ul>
-    <ul ng-if="isLogged">
-        <li><a href="#/dashboard">Dashboard</a></li>
-        <li><a href="#/profile/password">Password Change</a></li>
-        <li ng-if="isAdmin"><a href="#/admin">Users</a></li>
-        <li><a ng-controller="logoutController" ng-click="logout()">Logout</a></li>
-
-    </ul>
-</div>
+<div ng-include="'js/users/user-menu/user-menu.html'" id="user-menu"></div>
 
 <div ng-if="isLogged" class="user-box">
     <div>
+        <h2>Dashboard</h2>
         <a href="#/project/add"><button type="button" ng-if="isAdmin">Add new project</button></a>
         <a href="#/projects"><button type="button" ng-if="isAdmin">All projects</button></a>
-        <h2>Dashboard</h2>
         <h3>My lead projects</h3>
         <table class="table">
             <tr ng-repeat="project in projectsWhereLead">
@@ -32,7 +20,7 @@
                 <th>Description</th>
                 <th>Project</th>
                 <th>Due Date</th>
-            </tr>1
+            </tr>
             </thead>
             <tbody>
             <tr ng-repeat="issue in userIssues">
