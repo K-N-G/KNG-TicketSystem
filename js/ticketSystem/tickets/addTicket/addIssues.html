@@ -4,36 +4,40 @@
         <h2>Add issue</h2>
     </div>
     <form name="addIssueForm">
-        <div>
-            <label for="issueTitle">Title</label>
-            <input type="text" id="issueTitle" ng-model="addIssue.Title" required />
-        </div>
-        <div>
-            <label for="issueDescription">Description</label>
-        <textarea id="issueDescription" ng-model="addIssue.Description" required></textarea>
-        </div>
-        <div>
-            <label for="issueDueDate">Due date</label>
-            <input type="datetime-local" id="issueDueDate" ng-model="addIssue.DueDate" required />
-        </div>
-        <div>
-            <label for="issueAssignee">Assignee</label>
-            <select ng-controller="dashboardController" id="issueAssignee" ng-model="addIssue.AssigneeId" required>
-                <option value="">Choose assignee</option>
-                <option ng-repeat="user in users|orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
-            </select>
-        </div>
-        <div>
-            <label for="priorities">Priority</label>
-            <select id="priorities" ng-model="addIssue.PriorityId" required>
-                <option value="">Choose priority</option>
-                <option ng-repeat="pr in projectPriorities" value="{{pr.Id}}">{{pr.Name}}</option>
-            </select>
-        </div>
-        <div>
-            <label for="issueLabels">Labels</label>
-            <input type="text" id="issueLabels" ng-model="addIssue.Labels" required />
-        </div>
-        <button ng-disabled="addIssueForm.$invalid" ng-click="addIssue(addIssue)">Add issue</button>
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="issueTitle">Title</label></td>
+                    <td><input type="text" id="issueTitle" ng-model="addIssue.Title" required /></td>
+                </tr>
+                <tr>
+                    <td><label for="issueDescription">Description</label></td>
+                    <td><textarea id="issueDescription" ng-model="addIssue.Description" required></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="issueDueDate">Due date</label></td>
+                    <td><input type="datetime-local" id="issueDueDate" ng-model="addIssue.DueDate" required /></td>
+                </tr>
+                <tr>
+                    <td><label for="issueAssignee">Assignee</label></td>
+                    <td><select ng-controller="dashboardController" id="issueAssignee" ng-model="addIssue.AssigneeId" required>
+                        <option value="">Choose assignee</option>
+                        <option ng-repeat="user in users|orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><label for="priorities">Priority</label></td>
+                    <td><select id="priorities" ng-model="addIssue.PriorityId" required>
+                        <option value="">Choose priority</option>
+                        <option ng-repeat="pr in projectPriorities" value="{{pr.Id}}">{{pr.Name}}</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><label for="issueLabels">Labels</label></td>
+                    <td><input type="text" id="issueLabels" ng-model="addIssue.Labels" required /></td>
+                </tr>
+                <td><button ng-disabled="addIssueForm.$invalid" ng-click="addIssue(addIssue)">Add issue</button></td>
+            </tbody>
+        </table>
     </form>
 </div>

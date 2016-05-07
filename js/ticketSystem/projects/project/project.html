@@ -1,15 +1,19 @@
 <div ng-include="'js/users/user-menu/user-menu.html'" id="user-menu"></div>
 <div class="user-box">
     <div>
-        <h2>{{project.ProjectKey}}</h2>
-        <a ng-if="isAdmin ||isProjectLeader" href="#projects/edit/{{project.Id}}">Edit</a>
-        <a ng-if="isAdmin ||isProjectLeader" href="#projects/add-issue/{{project.Id}}">Add Issue</a>
-        <p>Project key: {{project.ProjectKey}}</p>
-        <p><strong>Name:</strong> {{project.Name}}</p>
-        <p><strong>Description:</strong> {{project.Description}}</p>
-        <p><strong>LeadId:</strong> ({{project.Lead.Id}}) {{project.Lead.Username}}</p>
-        <p>Labels: <span ng-repeat="label in project.Labels">{{label.Name}}{{$last ? '' : ', '}}</span></p>
-        <p>Priorities: <span ng-repeat="priority in project.Priorities">{{priority.Name}}{{$last ? '' : ', '}}</span></p>
+        <table>
+            <tbody>
+                <tr><td><h2>{{project.ProjectKey}}</h2></td></tr>
+                <tr><td><a ng-if="isAdmin ||isProjectLeader" href="#projects/edit/{{project.Id}}">Edit</a>
+                <a ng-if="isAdmin ||isProjectLeader" href="#projects/add-issue/{{project.Id}}">Add Issue</a></td></tr>
+                <tr><td>Project key: {{project.ProjectKey}}</td></tr>
+                <tr><td><strong>Name:</strong> {{project.Name}}</td></tr>
+                <tr><td><strong>Description:</strong> {{project.Description}}</td></tr>
+                <tr><td><strong>LeadId:</strong> ({{project.Lead.Id}}) {{project.Lead.Username}}</td></tr>
+                <tr><td>Labels: <span ng-repeat="label in project.Labels">{{label.Name}}{{$last ? '' : ', '}}</span></td></tr>
+                <tr><td>Priorities: <span ng-repeat="priority in project.Priorities">{{priority.Name}}{{$last ? '' : ', '}}</span></td></tr>
+            </tbody>
+        </table>
     </div>
     <div>
         <table>
